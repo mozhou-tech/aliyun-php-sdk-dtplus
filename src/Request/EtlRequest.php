@@ -17,48 +17,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dtplus\Request\V20180110;
+namespace Dtplus\Request;
 /**
- * Status Query
+ * Data Preprocessing Task
  *
- * Class StatusRequestt
+ * Class EtlRequest
  * @package Dtplus\Request\V20180110
  */
-class StatusRequest extends \RpcAcsRequest
+class EtlRequest extends \RpcAcsRequest
 {
-
-    private $taskId;
-
 
     private $bizCode;
 
-
     private $ds;
 
-
-    private $scnCode;
-
-
-    private $taskType;
-
-
-    public $path = "/re/status";
+    public $path = "/re/etl";
 
 	function  __construct()
 	{
-		parent::__construct("Dtplus", "2018-01-10", "Status", "dtplus", "openAPI");
-		$this->setMethod("GET");
+		parent::__construct("Dtplus", "2018-01-10", "Etl", "dtplus", "openAPI");
+		$this->setMethod("POST");
+        $this->addHeader("x-dataplus-timeout","60000");
 	}
-
-    public function getTaskId(){
-        return $this->taskId;
-    }
-
-
-    public function setTaskId($taskId){
-        $this->taskId = $taskId;
-        $this->queryParameters["taskId"] = $taskId;
-    }
 
 
     public function getBizCode(){
@@ -68,7 +48,7 @@ class StatusRequest extends \RpcAcsRequest
 
     public function setBizCode($bizCode){
         $this->bizCode = $bizCode;
-        $this->queryParameters["bizCode"] = $bizCode;
+        $this->content["bizCode"] = $bizCode;
     }
 
 
@@ -79,29 +59,7 @@ class StatusRequest extends \RpcAcsRequest
 
     public function setDs($ds){
         $this->ds = $ds;
-        $this->queryParameters["ds"] = $ds;
-    }
-
-
-    public function getScnCode(){
-        $this->scnCode;
-    }
-
-
-    public function setScnCode($scnCode){
-        $this->scnCode = $scnCode;
-        $this->queryParameters["scnCode"] = $scnCode;
-    }
-
-
-    public function getTaskType(){
-        $this->taskType;
-    }
-
-
-    public function setTaskType($taskType){
-        $this->taskType = $taskType;
-        $this->queryParameters["taskType"] = $taskType;
+        $this->content["ds"] = $ds;
     }
 
 }

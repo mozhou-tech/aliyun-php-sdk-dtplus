@@ -17,25 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dtplus\Request\V20180110;
+namespace Dtplus\Request;
 /**
- * Data Preprocessing Task
+ * Effect Compute
  *
- * Class EtlRequest
+ * Class IndexRequest
  * @package Dtplus\Request\V20180110
  */
-class EtlRequest extends \RpcAcsRequest
+class IndexRequest extends \RpcAcsRequest
 {
-
     private $bizCode;
+
 
     private $ds;
 
-    public $path = "/re/etl";
+
+    public $path = "/re/index";
 
 	function  __construct()
 	{
-		parent::__construct("Dtplus", "2018-01-10", "Etl", "dtplus", "openAPI");
+		parent::__construct("Dtplus", "2018-01-10", "Index", "dtplus", "openAPI");
 		$this->setMethod("POST");
         $this->addHeader("x-dataplus-timeout","60000");
 	}
@@ -61,5 +62,5 @@ class EtlRequest extends \RpcAcsRequest
         $this->ds = $ds;
         $this->content["ds"] = $ds;
     }
-
+	
 }

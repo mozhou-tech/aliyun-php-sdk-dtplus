@@ -17,7 +17,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dtplus\Request\V20180110;
+namespace Dtplus\Request;
 /**
  * Log Upload
  *

@@ -17,50 +17,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Dtplus\Request\V20180110;
-/**
- * Effect Compute
- *
- * Class IndexRequest
- * @package Dtplus\Request\V20180110
- */
-class IndexRequest extends \RpcAcsRequest
+spl_autoload_register("Autoloader::autoload");
+class Autoloader
 {
-    private $bizCode;
-
-
-    private $ds;
-
-
-    public $path = "/re/index";
-
-	function  __construct()
-	{
-		parent::__construct("Dtplus", "2018-01-10", "Index", "dtplus", "openAPI");
-		$this->setMethod("POST");
-        $this->addHeader("x-dataplus-timeout","60000");
-	}
-
-
-    public function getBizCode(){
-        return $this->bizCode;
+    private static $autoloadPathArray = array(
+        "src",
+        "src/Request"
+    );
+    
+    public static function autoload($className)
+    {
+        foreach (self::$autoloadPathArray as $path) {
+            $file = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.$path.DIRECTORY_SEPARATOR.$className.".php";
+            $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
+            if (is_file($file)) {
+                include_once $file;
+                break;
+            }
+        }
     }
-
-
-    public function setBizCode($bizCode){
-        $this->bizCode = $bizCode;
-        $this->content["bizCode"] = $bizCode;
+    
+    public static function addAutoloadPath($path)
+    {
+        array_push(self::$autoloadPathArray, $path);
     }
-
-
-    public function getDs(){
-        return $this->ds;
-    }
-
-
-    public function setDs($ds){
-        $this->ds = $ds;
-        $this->content["ds"] = $ds;
-    }
-	
 }

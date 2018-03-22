@@ -18,7 +18,7 @@
  * under the License.
  */
 
-namespace Dtplus\Request\V20180110;
+namespace Dtplus;
 
 class DataplusClient
 {
