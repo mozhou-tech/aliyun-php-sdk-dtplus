@@ -18,13 +18,14 @@
  * under the License.
  */
 namespace Dtplus\Request;
+use Dtplus\Request;
 /**
  * Effect Compute
  *
  * Class IndexRequest
  * @package Dtplus\Request\V20180110
  */
-class IndexRequest extends \RpcAcsRequest
+class IndexRequest extends Request
 {
     private $bizCode;
 

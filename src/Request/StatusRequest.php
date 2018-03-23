@@ -18,13 +18,14 @@
  * under the License.
  */
 namespace Dtplus\Request;
+use Dtplus\Request;
 /**
  * Status Query
  *
  * Class StatusRequestt
  * @package Dtplus\Request\V20180110
  */
-class StatusRequest extends \RpcAcsRequest
+class StatusRequest extends Request
 {
 
     private $taskId;

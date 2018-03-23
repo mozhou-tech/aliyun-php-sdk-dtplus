@@ -18,13 +18,15 @@
  * under the License.
  */
 namespace Dtplus\Request;
+use Dtplus\Request;
+
 /**
  * Offline Arithmetic Task
  *
  * Class TasksRequest
  * @package Dtplus\Request\V20180110
  */
-class TasksRequest extends \RpcAcsRequest
+class TasksRequest extends Request
 {
 
 

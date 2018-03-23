@@ -18,13 +18,14 @@
  * under the License.
  */
 namespace Dtplus\Request;
+use Dtplus\Request;
 /**
  * Data Preprocessing Task
  *
  * Class EtlRequest
  * @package Dtplus\Request\V20180110
  */
-class EtlRequest extends \RpcAcsRequest
+class EtlRequest extends Request
 {
 
     private $bizCode;

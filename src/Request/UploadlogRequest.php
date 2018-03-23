@@ -18,13 +18,15 @@
  * under the License.
  */
 namespace Dtplus\Request;
+use Dtplus\Request;
+
 /**
  * Log Upload
  *
  * Class UploadlogRequest
  * @package Dtplus\Request\V20180110
  */
-class UploadlogRequest extends \RpcAcsRequest
+class UploadlogRequest extends Request
 {
 
 

@@ -17,14 +17,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 namespace Dtplus\Request;
+use Dtplus\Request;
 /**
  * Recommend
  *
  * Class DoRecRequest
- * @package Dtplus\Request\V20180110
+ * @package Dtplus\Request
  */
-class DoRecRequest extends \RpcAcsRequest
+class DoRecRequest extends Request
 {
 
 
