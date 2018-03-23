@@ -36,7 +36,7 @@ class MetricTest extends TestCase
         $request->setToken('alidata91c57337f6d0d84f677d2e3ac');
         $request->setContent($logs);
         $response = $client->getResponse($request);
-        print_r($response);
+//        $this->assertEquals(1, count($stack));
     }
 
     function testDoRec()
@@ -48,6 +48,7 @@ class MetricTest extends TestCase
         $request->setRecnum('10');
         $response = $client->getResponse($request);
         print_r($response);
+
     }
 
     function testEtl()
