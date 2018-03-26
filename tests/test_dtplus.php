@@ -35,8 +35,8 @@ class MetricTest extends TestCase
         $request->setCustomerName('movie_recommend');
         $request->setToken('alidata91c57337f6d0d84f677d2e3ac');
         $request->setContent($logs);
-        $response = $client->getResponse($request);
-//        $this->assertEquals(1, count($stack));
+        $response = json_decode($client->getResponse($request));
+        $this->assertEquals('SUCCESS', $response->code);
     }
 
     function testDoRec()
@@ -46,9 +46,8 @@ class MetricTest extends TestCase
         $request->setBizCode('movie_recommend');
         $request->setScnCode('Movie_recommend');
         $request->setRecnum('10');
-        $response = $client->getResponse($request);
-        print_r($response);
-
+        $response = json_decode($client->getResponse($request));
+        $this->assertEquals('SUCCESS', $response->code);
     }
 
     function testEtl()
@@ -57,8 +56,8 @@ class MetricTest extends TestCase
         $client = new DataplusClient($this->ak_id, $this->ak_secret, $this->dplusOrgCode);
         $request->setBizCode('movie_recommend');
         $request->setDs("");
-        $response = $client->getResponse($request);
-        print_r($response);
+        $response = json_decode($client->getResponse($request));
+        $this->assertEquals('SUCCESS', $response->code);
     }
 
     function testTask()
@@ -69,8 +68,8 @@ class MetricTest extends TestCase
         $request->setDs("");
         $request->setScnCode("Movie_recommend");
         $request->setContainImport(true);
-        $response = $client->getResponse($request);
-        print_r($response);
+        $response = json_decode($client->getResponse($request));
+        $this->assertEquals('SUCCESS', $response->code);
     }
 
     function testStatus()
@@ -78,8 +77,8 @@ class MetricTest extends TestCase
         $request = new Dtplus\Request\StatusRequest();
         $client = new Dtplus\DataplusClient($this->ak_id, $this->ak_secret, $this->dplusOrgCode);
         $request->setTaskId('63469');
-        $response = $client->getResponse($request);
-        print_r($response);
+        $response = json_decode($client->getResponse($request));
+        $this->assertEquals('SUCCESS', $response->code);
     }
 
     function testIndex()
@@ -88,8 +87,8 @@ class MetricTest extends TestCase
         $client = new Dtplus\DataplusClient($this->ak_id, $this->ak_secret, $this->dplusOrgCode);
         $request->setBizCode('movie_recommend');
         $request->setDs("");
-        $response = $client->getResponse($request);
-        print_r($response);
+        $response = json_decode($client->getResponse($request));
+        $this->assertEquals('SUCCESS', $response->code);
     }
 }
 

@@ -24,7 +24,7 @@ namespace Dtplus;
 class Request
 {
     protected $headers = array();
-    protected $queryParameters;
+    protected $queryParameters = array();
     protected $method;
     protected $path;
     protected $content;
@@ -63,7 +63,6 @@ class Request
     public function getQueryParameters(){
         return $this->queryParameters;
     }
-
 
     public function getProtocol(){
         return $this->protocol;
