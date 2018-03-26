@@ -37,16 +37,16 @@ class DataplusClient
     private $request;
     private $requestBody;
 
-    function __construct($accessId,$accessSecret, $dplusOrgCode, $overLan=false)
+    function __construct($endpoint, $accessId,$accessSecret, $dplusOrgCode, $overLan=false)
     {
         $this->accessId = $accessId;
         $this->accessSecret = $accessSecret;
         $this->dplusOrgCode = $dplusOrgCode;
 
         if($overLan){
-            $this->dplusHost = "dtplus-lan-cn-shanghai.data.aliyuncs.com";
+            $this->dplusHost = "";
         }
-        $this->dplusHost = "dtplus-cn-shanghai.data.aliyuncs.com";
+        $this->dplusHost = $endpoint;
         $this->queryParameters = array();
     }
 
