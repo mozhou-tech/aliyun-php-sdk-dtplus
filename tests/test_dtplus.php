@@ -21,7 +21,7 @@ class MetricTest extends TestCase
         parent::setUp();
         $this->endpoint = 'dtplus-cn-shanghai.data.aliyuncs.com';
         $this->ak_id = 'LTAIsk0qFRkhyL2Q';      // 改成你的AccessKeyId
-        $this->ak_secret = 'xi7FP7EFafFV3CNUO0G2HAOzvSRAPi';   // 改成你的 AccessKeySecret
+        $this->ak_secret = '';   // 改成你的 AccessKeySecret
         $this->dplusOrgCode = 'dt_ng_1435638266713387';     // 改成你的 dplusOrgCode
     }
 
